@@ -17,7 +17,7 @@ RANLIB=ranlib
 CC=gcc.exe
 CCC=g++.exe
 CXX=g++.exe
-FC=gfortran
+FC=gfortran.exe
 AS=as.exe
 
 # Macros
@@ -67,7 +67,7 @@ lib/liblibmatrix.a: ${OBJECTFILES}
 ${OBJECTDIR}/src/Matrix4.o: src/Matrix4.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} $@.d
-	$(COMPILE.cc) -O3 -Wall -s -Iinclude -std=c++11 -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/Matrix4.o src/Matrix4.cpp
+	$(COMPILE.cc) -O3 -Wall -s -DNDEBUG -Iinclude -std=c++11 -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/Matrix4.o src/Matrix4.cpp
 
 # Subprojects
 .build-subprojects:

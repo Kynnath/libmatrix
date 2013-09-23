@@ -12,16 +12,18 @@ namespace mat
 {
     struct Matrix4
     {
-        double a1, a2, a3, a4,
-               b1, b2, b3, b4,
-               c1, c2, c3, c4,
-               d1, d2, d3, d4;
+        double data[16];
 
         Matrix4() = default;
+        double & operator()( int const& i_column, int const& i_row ); // 0-indexed
+        double const& operator()( int const& i_column, int const& i_row ) const; // 0-indexed
         void SetIdentity();
+        void Multiply( Matrix4 const& i_rhs );
     };
 
     extern Matrix4 const k_identity;
+
+    Matrix4 Multiply( Matrix4 i_lhs, Matrix4 const& i_rhs );
 }
 
 #endif	/* MATRIX4_HPP */
