@@ -17,6 +17,8 @@ namespace mat
         Matrix4() = default;
         double & operator()( int const& i_column, int const& i_row ); // 0-indexed
         double const& operator()( int const& i_column, int const& i_row ) const; // 0-indexed
+        double & operator[]( int const& i_arrayIndex );
+        double const& operator[]( int const& i_arrayIndex ) const;
         void SetIdentity();
         void Multiply( Matrix4 const& i_rhs );
     };

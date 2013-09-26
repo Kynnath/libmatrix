@@ -29,6 +29,18 @@ namespace mat
         return data[ i_column * 4 + i_row ];
     }
 
+    double & Matrix4::operator[]( int const& i_arrayIndex )
+    {
+        assert( i_arrayIndex >= 0 && i_arrayIndex < 16 );
+        return data[ i_arrayIndex ];
+    }
+
+    double const& Matrix4::operator[]( int const& i_arrayIndex ) const
+    {
+        assert( i_arrayIndex >= 0 && i_arrayIndex < 16 );
+        return data[ i_arrayIndex ];
+    }
+
     void Matrix4::SetIdentity()
     {
         *this = k_identity;
