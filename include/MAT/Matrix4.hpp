@@ -12,7 +12,7 @@ namespace mat
 {
     struct Matrix4
     {
-        double data[16];
+        double m_data[16];
 
         Matrix4() = default;
         double & operator()( int const& i_column, int const& i_row ); // 0-indexed

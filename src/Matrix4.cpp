@@ -20,25 +20,25 @@ namespace mat
     double & Matrix4::operator()( int const& i_column, int const& i_row ) // 0-indexed
     {
         assert( i_column >= 0 && i_column < 4 && i_row >= 0 && i_row < 4);
-        return data[ i_column * 4 + i_row ];
+        return m_data[ i_column * 4 + i_row ];
     }
 
     double const& Matrix4::operator()( int const& i_column, int const& i_row ) const // 0-indexed
     {
         assert( i_column >= 0 && i_column < 4 && i_row >= 0 && i_row < 4);
-        return data[ i_column * 4 + i_row ];
+        return m_data[ i_column * 4 + i_row ];
     }
 
     double & Matrix4::operator[]( int const& i_arrayIndex )
     {
         assert( i_arrayIndex >= 0 && i_arrayIndex < 16 );
-        return data[ i_arrayIndex ];
+        return m_data[ i_arrayIndex ];
     }
 
     double const& Matrix4::operator[]( int const& i_arrayIndex ) const
     {
         assert( i_arrayIndex >= 0 && i_arrayIndex < 16 );
-        return data[ i_arrayIndex ];
+        return m_data[ i_arrayIndex ];
     }
 
     void Matrix4::SetIdentity()
