@@ -8,11 +8,13 @@
 #ifndef MATRIX4_HPP
 #define	MATRIX4_HPP
 
+#include <array>
+
 namespace mat
 {
     struct Matrix4
     {
-        double m_data[16];
+        std::array<double,16> m_data;
 
         Matrix4() = default;
         double & operator()( int const& i_column, int const& i_row ); // 0-indexed
@@ -25,7 +27,7 @@ namespace mat
 
     extern Matrix4 const k_identity;
 
-    Matrix4 Multiply( Matrix4 i_lhs, Matrix4 const& i_rhs );
+    Matrix4 Multiply( Matrix4 c_lhs, Matrix4 const& i_rhs );
 }
 
 #endif	/* MATRIX4_HPP */

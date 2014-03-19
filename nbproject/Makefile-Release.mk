@@ -14,11 +14,11 @@ GREP=grep
 NM=nm
 CCADMIN=CCadmin
 RANLIB=ranlib
-CC=gcc.exe
-CCC=g++.exe
-CXX=g++.exe
-FC=gfortran.exe
-AS=as.exe
+CC=gcc
+CCC=g++
+CXX=g++
+FC=gfortran
+AS=as
 
 # Macros
 CND_PLATFORM=MinGW-Windows
@@ -56,18 +56,18 @@ LDLIBSOPTIONS=
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
-	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk lib/liblibmatrix.a
+	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/liblibmatrix.a
 
-lib/liblibmatrix.a: ${OBJECTFILES}
-	${MKDIR} -p lib
-	${RM} lib/liblibmatrix.a
-	${AR} -rv lib/liblibmatrix.a ${OBJECTFILES} 
-	$(RANLIB) lib/liblibmatrix.a
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/liblibmatrix.a: ${OBJECTFILES}
+	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
+	${RM} ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/liblibmatrix.a
+	${AR} -rv ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/liblibmatrix.a ${OBJECTFILES} 
+	$(RANLIB) ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/liblibmatrix.a
 
 ${OBJECTDIR}/src/Matrix4.o: src/Matrix4.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
-	${RM} $@.d
-	$(COMPILE.cc) -O3 -Wall -s -DNDEBUG -Iinclude -std=c++11 -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/Matrix4.o src/Matrix4.cpp
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/Matrix4.o src/Matrix4.cpp
 
 # Subprojects
 .build-subprojects:
@@ -75,7 +75,7 @@ ${OBJECTDIR}/src/Matrix4.o: src/Matrix4.cpp
 # Clean Targets
 .clean-conf: ${CLEAN_SUBPROJECTS}
 	${RM} -r ${CND_BUILDDIR}/${CND_CONF}
-	${RM} lib/liblibmatrix.a
+	${RM} ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/liblibmatrix.a
 
 # Subprojects
 .clean-subprojects:
