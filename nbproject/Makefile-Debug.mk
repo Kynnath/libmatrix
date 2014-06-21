@@ -35,7 +35,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
-	${OBJECTDIR}/src/Matrix4.o
+	${OBJECTDIR}/src/MAT/Matrix4.o
 
 
 # C Compiler Flags
@@ -64,10 +64,10 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/liblibmatrix.a: ${OBJECTFILES}
 	${AR} -rv ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/liblibmatrix.a ${OBJECTFILES} 
 	$(RANLIB) ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/liblibmatrix.a
 
-${OBJECTDIR}/src/Matrix4.o: src/Matrix4.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src
+${OBJECTDIR}/src/MAT/Matrix4.o: src/MAT/Matrix4.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/MAT
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/Matrix4.o src/Matrix4.cpp
+	$(COMPILE.cc) -g -Wall -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/MAT/Matrix4.o src/MAT/Matrix4.cpp
 
 # Subprojects
 .build-subprojects:

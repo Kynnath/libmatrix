@@ -5,7 +5,7 @@
  * Created on 18 de septiembre de 2013, 22:53
  */
 
-#include "MAT/Matrix4.hpp"
+#include "Matrix4.hpp"
 
 #include <cassert>
 #include <cstring>
